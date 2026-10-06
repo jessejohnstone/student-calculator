@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>s
+  <main class="container">
+    <h1>Student Marks Calculator</h1>
+
+    <p>Grading scale: A: 80–100 | B: 70–79 | C: 60–69 |
+      D: 50–59 | E: Below 50</p>
+    <p>For decimal marks, each grade starts at its stated lower boundary.</p>
+
+    <form id="subject-form" novalidate>
+      <label for="subject-name">Subject name</label>
+      <input
+        type="text"
+        id="subject-name"
+        placeholder="Example: Mathematics"
+        required
+      >
+
+      <label for="subject-marks">Marks</label>
+      <input
+        type="number"
+        id="subject-marks"
+        placeholder="Enter marks from 0 to 100"
+        min="0"
+        max="100"
+        step="any"
+        required
+      >
+
+      <button type="submit">Add subject</button>
+    </form>
+
+    <p id="error-message" role="alert"></p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="subject-list"></tbody>
+      </table>
+    </div>
+
+    <section class="results">
+      <h2>Results</h2>
+      <p>Subjects: <strong id="subject-count">0</strong></p>
+      <p>Total marks: <strong id="total-marks">0</strong></p>
+      <p>Average: <strong id="average-marks">—</strong></p>
+      <p>Overall grade: <strong id="overall-grade">—</strong></p>
+      <p>Highest marks: <strong id="highest-marks">—</strong></p>
+      <p>Lowest marks: <strong id="lowest-marks">—</strong></p>
+    </section>
+
+    <p id="storage-message" role="status"></p>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
